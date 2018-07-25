@@ -30,10 +30,15 @@ export class LoginPage {
   authenticate() {
     console.log('Entered authenticate');
     console.log('USERNAME: ' + this.username + ', PASSWORD: ' + this.password)
-    if (this.username == "hello" && this.password == "hello") {
+    if (this.username == "admin" && this.password == "admin") {
       console.log('SUCCESS');
       this.navCtrl.setRoot('WelcomePage');
     }
+  }
+
+  newSignup() {
+    console.log('New SignUp');
+    this.navCtrl.setRoot('SignupPage');
   }
 
 }
