@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import url
+from dbmsproj import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$',views.cab_api,name="cabapi"),
+    url(r'^login/$',views.user_login,name="login"),
+    url(r'^logout/$',views.user_logout,name="logout")
 ]
