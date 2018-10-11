@@ -16,11 +16,11 @@
   <form [formGroup]="userData" (ngSubmit)="logForm()">
     <ion-item>
       <ion-label floating>First Name</ion-label>
-      <ion-input type="text" formControlName="fname"></ion-input>
+      <ion-input type="text" formControlName="username"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Last Name</ion-label>
-      <ion-input type="text" formControlName="lname"></ion-input>
+      <ion-label floating>Phone Number</ion-label>
+      <ion-input type="text" formControlName="phone_no"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Email ID</ion-label>
@@ -32,7 +32,7 @@
     </ion-item>
 
     <div id="loginButtons">
-      <button ion-button type="submit" [disabled]="!userData.valid">Submit</button>
+      <button ion-button type="submit" [disabled]="!userData.valid" (click)="submitDetails()">Submit</button>
     </div>
 
   </form>

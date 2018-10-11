@@ -4,12 +4,16 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { HTTP } from '@ionic-native/http';
+
 
 import { MyApp } from './app.component';
 
-import { LoginPageModule } from '../pages/login/login.module'
-import { WelcomePageModule } from '../pages/welcome/welcome.module'
-import { SignupPageModule } from '../pages/signup/signup.module'
+import { LoginPageModule } from '../pages/login/login.module';
+import { WelcomePageModule } from '../pages/welcome/welcome.module';
+import { SignupPageModule } from '../pages/signup/signup.module';
+import { DummyPageModule } from '../pages/dummy/dummy.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import { SignupPageModule } from '../pages/signup/signup.module'
     LoginPageModule,
     WelcomePageModule,
     SignupPageModule,
+    DummyPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -30,6 +35,8 @@ import { SignupPageModule } from '../pages/signup/signup.module'
     StatusBar,
     SplashScreen,
     TextToSpeech,
+    SpeechRecognition,
+    HTTP,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
