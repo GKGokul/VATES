@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.cab_api,name="cabapi"),
     url(r'^login/$',views.user_login,name="login"),
-    url(r'^logout/$',views.user_logout,name="logout")
+    url(r'^logout/$',views.user_logout,name="logout"),
+    url(r'^register/$',views.user_create,name="register"),
+    url(r'^voice/$',views.voice,name="voice")
 ]
