@@ -33,9 +33,7 @@ export class LoginPage {
     console.log('USERNAME: ' + this.username + ', PASSWORD: ' + this.password)
     // if (this.username == "admin" && this.password == "admin") {
     //   console.log('SUCCESS');
-    //   this.navCtrl.setRoot('WelcomePage');
-    // }
-
+    //   this.navCtrl.setRoot('WelcomePage');}
 
     let postData = {
       "username": this.username,
@@ -44,33 +42,33 @@ export class LoginPage {
 
     console.log(JSON.stringify(postData));
     this.http.setDataSerializer("JSON");
-    this.http.post('http://192.168.43.149:8000/login/', postData, {})
-      .then(data => {
-        // console.log(data.status);
-        // console.log(data.data); // data received by server
-        // console.log(data.headers);
-
-        console.log(data);
-
-        if (data.status == 201) {
-          let response = JSON.parse(data.data);
-          if (response.login == 'true') {
-            console.log('Login Success');
-            this.navCtrl.push('WelcomePage');
+    this.http.post('http://192.168.43.149:8000/login/', postData, {}).then(data => {
+      // console.log(data.status);
+      // console.log(data.data); // data received by server
+      // console.log(data.headers);
+      console.log(data);
+      if (data.status == 201) {
+        let response = JSON.parse(data.data);
+        if (response.login == 'true') {
+          console.log('Login Success');
+          if (postData.username == 'admin') {
+            console.log('ADMIN:');
+            this.navCtrl.push('ReportPage');
           }
           else {
-            console.log('Login Failure');
+            console.log('CUSTOMER:');
+            this.navCtrl.push('WelcomePage');
           }
         }
-
-
-      })
+        else {
+          console.log('Login Failure');
+        }
+      }
+    })
       .catch(error => {
-
         console.log(error.status);
         console.log(error.error); // error message as string
         console.log(error.headers);
-
       });
   }
 

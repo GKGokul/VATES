@@ -15,10 +15,13 @@
   <div>
     <h3 align="center">CABS</h3>
     <ion-list>
-      <ion-item *ngFor="let cab of cabs">{{cab}}</ion-item>
+      <ion-item *ngFor="let cab of cabs" (click)="open($event, cab)">
+        {{cab}}
+        <button ion-button color="primary"> Book </button>
+      </ion-item>
     </ion-list>
   </div>
-  <div>
+  <!-- <div>
     <h3 align="center">TRAINS</h3>
     <ion-list>
       <ion-item *ngFor="let train of trains">{{train}}</ion-item>
@@ -29,9 +32,5 @@
     <ion-list>
       <ion-item *ngFor="let bus of buses">{{bus}}</ion-item>
     </ion-list>
-  </div>
-</ion-content>
-
-<ion-content padding>
-
+  </div> -->
 </ion-content>

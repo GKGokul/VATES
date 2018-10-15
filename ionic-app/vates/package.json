@@ -22,6 +22,7 @@
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "4.9.1",
+    "@ionic-native/geolocation": "^4.15.0",
     "@ionic-native/http": "^4.12.2",
     "@ionic-native/speech-recognition": "^4.10.1",
     "@ionic-native/splash-screen": "4.9.1",
@@ -33,6 +34,7 @@
     "cordova-plugin-advanced-http": "^2.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-speechrecognition": "^1.2.0",
@@ -59,7 +61,10 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-tts": {},
       "cordova-plugin-speechrecognition": {},
-      "cordova-plugin-advanced-http": {}
+      "cordova-plugin-advanced-http": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      }
     },
     "platforms": [
       "android"

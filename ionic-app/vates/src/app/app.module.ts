@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { HTTP } from '@ionic-native/http';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 import { MyApp } from './app.component';
@@ -14,6 +15,9 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { WelcomePageModule } from '../pages/welcome/welcome.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { DummyPageModule } from '../pages/dummy/dummy.module';
+import { ReportPageModule } from '../pages/report/report.module';
+import { ProfilePageModule } from '../pages/profile/profile.module';
+import { NavigatorPageModule } from '../pages/navigator/navigator.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,9 @@ import { DummyPageModule } from '../pages/dummy/dummy.module';
     WelcomePageModule,
     SignupPageModule,
     DummyPageModule,
+    ReportPageModule,
+    ProfilePageModule,
+    NavigatorPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -37,6 +44,7 @@ import { DummyPageModule } from '../pages/dummy/dummy.module';
     TextToSpeech,
     SpeechRecognition,
     HTTP,
+    Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
