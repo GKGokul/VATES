@@ -64,7 +64,7 @@ export class WelcomePage {
         (matches: Array<string>) => {
           if (matches.indexOf("show Cabs") > -1) {
             console.log('Navigator Page Incoming');
-            this.navCtrl.push('NavigatorPage');
+            this.navCtrl.push('DummyPage');
           }
           else if (matches.indexOf("show my profile") > -1) {
             console.log('Profile Page Incoming');
