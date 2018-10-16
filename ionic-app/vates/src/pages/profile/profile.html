@@ -7,12 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Username</ion-label>
+      <ion-input type="text" placeholder="{{userData.username}}" [(ngModel)]=userData.username></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" placeholder="{{userData.email}}" [(ngModel)]=userData.email></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" placeholder="{{userData.first_name}}" [(ngModel)]=userData.first_name></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" placeholder="{{userData.last_name}}" [(ngModel)]=userData.last_name></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone Number</ion-label>
+      <ion-input type="text" placeholder="{{userData.phone_no}}" [(ngModel)]=userData.phone_no></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button round type="button" name="button" color="dark" (click)="editDetails()">Submit</button>
 
 </ion-content>

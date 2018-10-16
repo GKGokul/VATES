@@ -61,7 +61,7 @@ export class LoginPage {
           }
         }
         else {
-          console.log('Login Failure');
+          alert("Login Failure");
         }
       }
     })

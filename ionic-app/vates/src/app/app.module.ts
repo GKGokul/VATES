@@ -18,6 +18,7 @@ import { DummyPageModule } from '../pages/dummy/dummy.module';
 import { ReportPageModule } from '../pages/report/report.module';
 import { ProfilePageModule } from '../pages/profile/profile.module';
 import { NavigatorPageModule } from '../pages/navigator/navigator.module';
+import { PswdresetPageModule } from '../pages/pswdreset/pswdreset.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NavigatorPageModule } from '../pages/navigator/navigator.module';
     ReportPageModule,
     ProfilePageModule,
     NavigatorPageModule,
+    PswdresetPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

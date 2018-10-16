@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { HTTP } from '@ionic-native/http';
@@ -19,32 +19,30 @@ import { HTTP } from '@ionic-native/http';
 })
 export class WelcomePage {
 
+  pswd: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private tts: TextToSpeech, private speechRecognition: SpeechRecognition, private http: HTTP) {
+    this.pswd = this.navParams.get("pswd");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
     this.tts.speak('Welcome to VATES, A Voice-based Automated Transport Enquiry System').then(() => console.log('Success'));
-
     // this.http.get('http://192.168.43.149:8000/sample', {}, {})
     //   .then(data => {
     //     console.log('GKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK:')
     //     console.log(data.status);
     //     console.log(data.data); // data received by server
     //     console.log(data.headers);
-    //
     //   })
     //   .catch(error => {
-    //
     //     console.log(error.status);
     //     console.log(error.error); // error message as string
     //     console.log(error.headers);
-    //
     //   });
   }
 
   listenNow() {
-
     this.speechRecognition.hasPermission()
       .then((hasPermission: boolean) => {
         if (!hasPermission) {
@@ -79,7 +77,6 @@ export class WelcomePage {
         (onerror) => console.log('error:', onerror)
       )
 
-
   }
 
 
@@ -100,12 +97,47 @@ export class WelcomePage {
 
       })
       .catch(error => {
-
         console.log(error.status);
         console.log(error.error); // error message as string
         console.log(error.headers);
 
       });
+  }
+
+  changePassword() {
+    console.log('Password Reset Page Incoming');
+    this.navCtrl.push('PswdresetPage');
+  }
+
+  showProfile() {
+    console.log('Profile Page Incoming');
+    this.navCtrl.push('ProfilePage');
+  }
+
+  deleteProfile() {
+
+    let alert = this.alertCtrl.create({
+      title: 'Confirm Delete?',
+      message: 'Are you sure to delete your profile?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Yes clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+
+
   }
 
 }
