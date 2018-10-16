@@ -13,8 +13,11 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="overall">
+<ion-card>
+  <ion-card-header>
+    Change Password
+  </ion-card-header>
   <ion-list>
 
     <ion-item>
@@ -33,7 +36,10 @@
     </ion-item>
 
   </ion-list>
-
+  <div id="loginButtons">
   <button ion-button round type="button" name="button" color="dark" (click)="resetPswd()">Login</button>
+</div>
+</ion-card>
+
 
 </ion-content>

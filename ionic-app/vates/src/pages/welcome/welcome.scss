@@ -1,15 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
 page-welcome {
 
   ion-title{
     text-align: center;
   }
 
-  div{
+  .heading{
     text-align: center;
+    font-family:"oxygen",sans-serif;
+    font-size: 8px;
   }
 
   #mic{
-    font-size: 40px !important;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
+  .overall{
+		background:#ff7400;
+
+	    }
+  .item {
+        text-align: center;
+		margin-bottom: 10px;
+		border: medium none;
+		background: rgba(0, 0, 0, 0.1);
+    }
+   element.style {
+        height: 54px;
+    }
+    ion-card.card {
+		box-shadow: none;
+		background: rgba(0, 0, 0, 0.4);
+		border-radius: 5px;
+	}
+	#loginButtons{
+	    font-family:"oxygen",sans-serif;
+	    font-weight: bold;
+	  }
+	
+
+
 
 }

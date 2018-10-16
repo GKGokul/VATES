@@ -13,22 +13,26 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div>
+<ion-content padding class="overall">
+  <div class="heading">
     <h1>Welcome to</h1>
     <h1>Voice-based automated</h1>
     <h1>Transport Enquiry System</h1>
   </div>
 
-  <div>
-    <button type="button" name="button" (click)="listenNow()">
-      <ion-icon name="mic" id="mic"></ion-icon>
+  <div id="mic">
+    <button ion-button type="button" name="button" (click)="listenNow()" outline round  color="dark" style="height:100px;">
+      <ion-icon name="mic" style="zoom:5.0;"></ion-icon>
     </button>
-    <button ion-button type="button" name="button" (click)="logout()">Logout</button>
-    <button ion-button type="button" name="button" (click)="changePassword()">Change Password</button>
-    <button ion-button type="button" name="button" (click)="showProfile()">Show Profile</button>
-    <button ion-button type="button" name="button" (click)="deleteProfile()">Delete Profile</button>
-
   </div>
+    <ion-card id="loginButtons">
+    <ion-list>
+      <ion-item>   <button ion-button type="button" default name="button" (click)="showProfile()" color="dark" round>Show Profile</button>   </ion-item>
+      <ion-item>  <button ion-button type="button" default name="button" (click)="changePassword()" color="dark" round>Change Password</button>   </ion-item>
+      <ion-item>  <button ion-button type="button" default name="button" (click)="deleteProfile()" color="dark" round>Delete Profile</button>  </ion-item>
+      <ion-item>  <button ion-button type="button" default name="button" (click)="logout()" color="dark" round>Logout</button>  </ion-item>
+    </ion-list>
+   </ion-card>
+  
 
 </ion-content>

@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
 page-pswdreset {
+   .overall{
+		background:#ff7400;
+
+	    }
+	ion-card-header.card-header {
+		color: #fff;
+		font-size:150%;
+		}
+	#loginButtons{
+	    text-align: center;
+	    font-family:"oxygen",sans-serif;
+	    font-weight: bold;
+	    margin-bottom : 8px;
+	  }
+	ion-title{
+	    text-align: center;
+	  }
+	ion-card-header{
+	    text-align:center;
+	    font-family: "Oxygen", sans-serif;
+	    font-weight: bold;
+	    font-size: 2.2rem;
+    }
+    .item {
+		margin-bottom: 10px;
+		background: white;
+		border: medium none;
+    }
+    element.style {
+        height: 54px;
+    }
+    ion-card.card {
+		box-shadow: none;
+		background: rgba(0, 0, 0, 0.4);
+		border-radius: 5px;
+	}
+
 
 }

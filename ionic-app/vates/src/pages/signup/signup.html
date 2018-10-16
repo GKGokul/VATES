@@ -12,28 +12,34 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="overall">
+  <ion-card>
+    <ion-card-header>
+        Enter your details
+      </ion-card-header>
   <form [formGroup]="userData" (ngSubmit)="logForm()">
     <ion-item>
-      <ion-label floating>First Name</ion-label>
+      <ion-label floating><ion-icon name="person"></ion-icon> First Name</ion-label>
       <ion-input type="text" formControlName="username"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Phone Number</ion-label>
+      <ion-label floating><ion-icon name="phone-portrait"></ion-icon> Phone Number(ie. 10 digits)</ion-label>
       <ion-input type="text" formControlName="phone_no"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Email ID</ion-label>
+      <ion-label floating><ion-icon name="mail"></ion-icon> Email ID(eg. xyz@xyz.com)</ion-label>
       <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Password</ion-label>
+      <ion-label floating><ion-icon name="unlock"></ion-icon> Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
 
     <div id="loginButtons">
-      <button ion-button type="submit" [disabled]="!userData.valid" (click)="submitDetails()">Submit</button>
+      <button ion-button type="submit" [disabled]="!userData.valid" (click)="submitDetails()" color="dark" round>Submit</button>
     </div>
 
+
   </form>
+</ion-card>
 </ion-content>
