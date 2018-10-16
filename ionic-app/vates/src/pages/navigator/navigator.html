@@ -13,27 +13,37 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="overall">
+  <ion-card>
+  <ion-card-header>
+      Ride Details
+  </ion-card-header>  
   <ion-list>
     <ion-item>
-      <ion-label stacked>Source</ion-label>
+      <ion-label color="dark" stacked>Source</ion-label>
       <ion-input type="text" placeholder="{{source}}" [(ngModel)]=source></ion-input>
     </ion-item>
-    <button type="button" name="button" (click)="listenSource()">
+    <div class="spcbut">
+    <button ion-button color="dark" outline round type="button" name="button" (click)="listenSource()">
       <ion-icon name="mic" id="mic"></ion-icon>
     </button>
+  </div>
 
     <ion-item>
-      <ion-label stacked>Destination</ion-label>
+      <ion-label color="dark" stacked>Destination</ion-label>
       <ion-input type="text" placeholder="{{destination}}" [(ngModel)]=destination></ion-input>
     </ion-item>
-    <button type="button" name="button" (click)="listenDestination()">
+    <div class="spcbut">
+    <button ion-button color="dark" outline round type="button" name="button"(click)="listenDestination()">
       <ion-icon name="mic" id="mic"></ion-icon>
     </button>
+  </div>
 
   </ion-list>
+  <div id="loginButtons">
+  <button ion-button color="dark" round type="button" name="button" (click)="getFareEstimate()">Fare Estimate</button>
+  </div>
+</ion-card>
 
-  <button ion-button type="button" name="button" (click)="getFareEstimate()">Fare Estimate</button>
 
 </ion-content>

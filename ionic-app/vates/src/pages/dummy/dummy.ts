@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Platform, IonicPage, NavController,AlertController, NavParams } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
@@ -28,7 +28,7 @@ export class DummyPage {
   lati: any; //latitude
   fare: any;
 
-  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private tts: TextToSpeech) {
+  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,private http: HTTP, private tts: TextToSpeech) {
     this.cabs = [];
     let resp = this.navParams.get('fareEstimate');
     this.response = resp;
@@ -100,7 +100,7 @@ export class DummyPage {
     });
     alert.present();
 
-    alert(JSON.stringify(item));
+    
   }
 
   getEstimate() {
