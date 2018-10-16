@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
-import { Geolocation } from '@ionic-native/geolocation';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 
 /**
@@ -18,18 +18,24 @@ import { Geolocation } from '@ionic-native/geolocation';
 })
 export class DummyPage {
 
+  response: any;
+
   cabs: any;
   buses: any;
   trains: any;
   //Set the properties in this class
   long: any; //longitude
   lati: any; //latitude
-  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private geolocation: Geolocation) {
-  this.cabs=[];
+  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private tts: TextToSpeech) {
+    this.cabs = [];
+    let resp = this.navParams.get('fareEstimate');
+    this.response = resp;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DummyPage');
+    // this.tts.speak('Welcome to VATES, A Voice-based Automated Transport Enquiry System').then(() => console.log('Success'));
+    alert(this.response);
     this.loadDetails();
   }
 
@@ -49,22 +55,20 @@ export class DummyPage {
         console.log(JSON.stringify(response_mode_data));
 
 
-
         console.log(response_data[0].car_no, response_mode_data[0]);
 
         var num = 0;
-        for (num = 0; num <5; num++) {
-          this.cabs.push([response_data[num],response_mode_data[num]]);
-          }
+        for (num = 0; num < 5; num++) {
+          this.cabs.push([response_data[num], response_mode_data[num]]);
+        }
 
-          alert(JSON.stringify(this.cabs));
+        alert(JSON.stringify(this.cabs));
 
       })
       .catch(error => {
         console.log(error.status);
         console.log(error.error); // error message as string
         console.log(error.headers);
-
       });
   }
 

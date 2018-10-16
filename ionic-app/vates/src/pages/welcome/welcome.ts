@@ -62,7 +62,7 @@ export class WelcomePage {
         (matches: Array<string>) => {
           if (matches.indexOf("show Cabs") > -1) {
             console.log('Navigator Page Incoming');
-            this.navCtrl.push('DummyPage');
+            this.navCtrl.push('NavigatorPage');
           }
           else if (matches.indexOf("show my profile") > -1) {
             console.log('Profile Page Incoming');
@@ -115,7 +115,6 @@ export class WelcomePage {
   }
 
   deleteProfile() {
-
     let alert = this.alertCtrl.create({
       title: 'Confirm Delete?',
       message: 'Are you sure to delete your profile?',
@@ -136,8 +135,6 @@ export class WelcomePage {
       ]
     });
     alert.present();
-
-
   }
 
 }

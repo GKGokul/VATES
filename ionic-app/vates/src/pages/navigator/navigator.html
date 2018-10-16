@@ -15,4 +15,25 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Source</ion-label>
+      <ion-input type="text" placeholder="{{source}}" [(ngModel)]=source></ion-input>
+    </ion-item>
+    <button type="button" name="button" (click)="listenSource()">
+      <ion-icon name="mic" id="mic"></ion-icon>
+    </button>
+
+    <ion-item>
+      <ion-label stacked>Destination</ion-label>
+      <ion-input type="text" placeholder="{{destination}}" [(ngModel)]=destination></ion-input>
+    </ion-item>
+    <button type="button" name="button" (click)="listenDestination()">
+      <ion-icon name="mic" id="mic"></ion-icon>
+    </button>
+
+  </ion-list>
+
+  <button ion-button type="button" name="button" (click)="getFareEstimate()">Fare Estimate</button>
+
 </ion-content>
