@@ -25,6 +25,7 @@ export class DummyPage {
   long: any; //longitude
   lati: any; //latitude
   constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private geolocation: Geolocation) {
+  this.cabs=[];
   }
 
   ionViewDidLoad() {
@@ -51,21 +52,12 @@ export class DummyPage {
 
         console.log(response_data[0].car_no, response_mode_data[0]);
 
-        this.cabs = [
-          response_data[0].car_no + "   " + response_data[0].driver_name + "   " + response_data[0].rating + "   " + response_mode_data[0].model,
-          response_data[1].car_no + "   " + response_data[1].driver_name + "   " + response_data[1].rating + "   " + response_mode_data[1].model,
-          response_data[2].car_no + "   " + response_data[2].driver_name + "   " + response_data[2].rating + "   " + response_mode_data[2].model,
-          response_data[3].car_no + "   " + response_data[3].driver_name + "   " + response_data[3].rating + "   " + response_mode_data[3].model,
-          response_data[4].car_no + "   " + response_data[4].driver_name + "   " + response_data[4].rating + "   " + response_mode_data[4].model
-        ]
-        // this.buses = [
-        //   'A2 Amma Bus'
-        // ]
-        // this.trains = [
-        //   '600012 Palakkad-Chennai Express'
-        // ]
+        var num = 0;
+        for (num = 0; num <5; num++) {
+          this.cabs.push([response_data[num],response_mode_data[num]]);
+          }
 
-
+          alert(JSON.stringify(this.cabs));
 
       })
       .catch(error => {

@@ -11,15 +11,23 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content>
+<ion-content id="over">
   <div>
     <h3 align="center">CABS</h3>
-    <ion-list>
-      <ion-item *ngFor="let cab of cabs" (click)="open($event, cab)">
-        {{cab}}
-        <button ion-button color="primary"> Book </button>
-      </ion-item>
-    </ion-list>
+    <!-- <ion-list> -->
+      <!-- <ion-item *ngFor="let cab of cabs" > -->
+      <ion-card  *ngFor="let cab of cabs" class="cabdisplay">
+        <p>
+        <ion-icon class="center"  name="person" style="zoom:3.0;"></ion-icon><br>
+        Car: {{cab[0].car_no}}<br>
+        Driver: {{cab[0].driver_name}}<br>
+        Rating: {{cab[0].rating}}<br>
+        Model: {{cab[1].model}}
+      </p>
+        <div align="right"><button ion-button color="primary" (click)="open($event, cab)" right color="dark" round> Book </button></div>
+      </ion-card>
+      <!-- </ion-item>
+    </ion-list> -->
   </div>
   <!-- <div>
     <h3 align="center">TRAINS</h3>
