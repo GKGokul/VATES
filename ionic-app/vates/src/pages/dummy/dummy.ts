@@ -26,16 +26,18 @@ export class DummyPage {
   //Set the properties in this class
   long: any; //longitude
   lati: any; //latitude
+  fare: any;
+
   constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private tts: TextToSpeech) {
     this.cabs = [];
     let resp = this.navParams.get('fareEstimate');
     this.response = resp;
+    this.fare = +this.response;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DummyPage');
-    // this.tts.speak('Welcome to VATES, A Voice-based Automated Transport Enquiry System').then(() => console.log('Success'));
-    alert(this.response);
+    this.tts.speak(JSON.stringify(this.fare)).then(() => console.log('Success'));
     this.loadDetails();
   }
 
@@ -76,8 +78,33 @@ export class DummyPage {
   public open(event, item) {
     event.stopPropagation();
     console.log('BOOOOOOKKKKK CLICKEDDDDDDDDDDDDDDDD');
-    alert(JSON.stringify(item));
 
+    let alert = this.alertCtrl.create({
+      title: 'Confirm Ride?',
+      message: 'Are you sure to book this cab?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Yes clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+
+    alert(JSON.stringify(item));
+  }
+
+  getEstimate() {
+    this.tts.speak(JSON.stringify(this.fare)).then(() => console.log('Success'));
   }
 
 }

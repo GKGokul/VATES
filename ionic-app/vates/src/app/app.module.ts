@@ -8,7 +8,6 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { HTTP } from '@ionic-native/http';
 import { Geolocation } from '@ionic-native/geolocation';
 
-
 import { MyApp } from './app.component';
 
 import { LoginPageModule } from '../pages/login/login.module';

@@ -15,18 +15,14 @@
   <div>
     <h3 align="center">CABS</h3>
     <!-- <ion-list> -->
-      <!-- <ion-item *ngFor="let cab of cabs" > -->
-      <ion-card  *ngFor="let cab of cabs" class="cabdisplay">
-        <p>
-        <ion-icon class="center"  name="person" style="zoom:3.0;"></ion-icon><br>
-        Car: {{cab[0].car_no}}<br>
-        Driver: {{cab[0].driver_name}}<br>
-        Rating: {{cab[0].rating}}<br>
-        Model: {{cab[1].model}}
+    <!-- <ion-item *ngFor="let cab of cabs" > -->
+    <ion-card *ngFor="let cab of cabs" class="cabdisplay">
+      <p>
+        <ion-icon class="center" name="person" style="zoom:3.0;"></ion-icon><br> Car: {{cab[0].car_no}}<br> Driver: {{cab[0].driver_name}}<br> Rating: {{cab[0].rating}}<br> Model: {{cab[1].model}}
       </p>
-        <div align="right"><button ion-button color="primary" (click)="open($event, cab)" right color="dark" round> Book </button></div>
-      </ion-card>
-      <!-- </ion-item>
+      <div align="right"><button ion-button color="primary" (click)="open($event, cab)" right color="dark" round> Book </button></div>
+    </ion-card>
+    <!-- </ion-item>
     </ion-list> -->
   </div>
   <!-- <div>
@@ -42,3 +38,9 @@
     </ion-list>
   </div> -->
 </ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <button ion-button type="button" default name="button" (click)="getEstimate()" color="dark" round>Fare Estimate</button>
+  </ion-toolbar>
+</ion-footer>
